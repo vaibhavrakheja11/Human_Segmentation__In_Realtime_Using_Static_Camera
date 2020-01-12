@@ -1,5 +1,8 @@
-### This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
-### The segeregated readme files can be found in individual directories. 
+# Human Segmentation in Realtime using Static Camera
+## Image and Video Processing
+
+#### This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
+#### The segeregated readme files can be found in individual directories. 
 
 
 
@@ -7,7 +10,7 @@
 
 # MASKRCNN
 
-FOLDER NAME: Mask_Rcnn
+FOLDER NAME: MASK_RCNN
 
 ## Installation
 
@@ -19,7 +22,7 @@ FOLDER NAME: Mask_Rcnn
 	`actvitate MaskRCNN`
 	`pip install -r requirements.txt`
 
--Download the coco preTrained Weights	
+- Download the coco preTrained Weights	
 	Go here "https://github.com/matterport/Mask_RCNN/releases"
 	download the "mask_rcnn_coco.h5" file
 	place the file in the Mask_RCNN directory
@@ -47,22 +50,22 @@ FOLDER NAME: YOLACT
  - Install [Pytorch](http://pytorch.org/) 1.0.1 (or higher) and TorchVision.
  - Install some other packages:
    Shell
-   ### Cython needs to be installed before pycocotools
-   pip install cython
-   pip install opencv-python pillow pycocotools matplotlib 
+ - #### Cython needs to be installed before pycocotools
+   `pip install cython`
+   `pip install opencv-python pillow pycocotools matplotlib`
    
  - Clone this repository and enter it:
    Shell
-   git clone https://github.com/dbolya/yolact.git
-   cd yolact
+   `git clone https://github.com/dbolya/yolact.git`
+   `cd yolact`
    
  - If you'd like to train YOLACT, download the COCO dataset and the 2014/2017 annotations. Note that this script will take a while and dump 21gb of files into ./data/coco.
    Shell
-   sh data/scripts/COCO.sh
+   `sh data/scripts/COCO.sh`
    
  - If you'd like to evaluate YOLACT on test-dev, download test-dev with this script.
    Shell
-   sh data/scripts/COCO_test.sh
+   `sh data/scripts/COCO_test.sh`
    
 
 
@@ -77,16 +80,16 @@ By default, we train on COCO. Make sure to download the entire dataset using the
    - Note that you can press ctrl+c while training and it will save an *_interrupt.pth file at the current iteration.
    - All weights are saved in the ./weights directory by default with the file name <config>_<epoch>_<iter>.pth.
 Shell
--Trains using the base config with a batch size of 8 (the default).
+- Trains using the base config with a batch size of 8 (the default).
 `python train.py --config=yolact_base_config`
 
--Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
+- Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
 `python train.py --config=yolact_base_config --batch_size=5`
 
--Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
+- Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
 `python train.py --config=yolact_base_config --resume=weights/yolact_base_10_32100.pth --start_iter=-1`
 
--Use the help option to see a description of all available command line arguments
+- Use the help option to see a description of all available command line arguments
 `python train.py --help`
 
 
@@ -102,7 +105,7 @@ If you use YOLACT or this code base in your work, please cite
   year      = {2019},
 }
 
-# cvlib
+# CVLIB
 A high level easy-to-use open source Computer Vision library for Python.
 FOLDER NAME: YOLO-BG-SUB
 ## Installation
@@ -115,7 +118,7 @@ FOLDER NAME: YOLO-BG-SUB
 If you don't have them already installed, you can install through pip
 
 ### Installing cvlib
-pip install cvlib
+`pip install cvlib`
 
 ### Real time object detection
 YOLOv3 is actually a heavy model to run on CPU. If you are working with real time webcam / video feed and doesn't have GPU, try using tiny yolo which is a smaller version of the original YOLO model. It's significantly fast but less accurate.
