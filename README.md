@@ -105,7 +105,7 @@ If you use YOLACT or this code base in your work, please cite
   year      = {2019},
 }
 
-# cvlib
+# CVLIB
 A high level easy-to-use open source Computer Vision library for Python.
 FOLDER NAME: YOLO-BG-SUB
 ## Installation
