@@ -80,16 +80,16 @@ By default, we train on COCO. Make sure to download the entire dataset using the
    - Note that you can press ctrl+c while training and it will save an *_interrupt.pth file at the current iteration.
    - All weights are saved in the ./weights directory by default with the file name <config>_<epoch>_<iter>.pth.
 Shell
--Trains using the base config with a batch size of 8 (the default).
+- Trains using the base config with a batch size of 8 (the default).
 `python train.py --config=yolact_base_config`
 
--Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
+- Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
 `python train.py --config=yolact_base_config --batch_size=5`
 
--Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
+- Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
 `python train.py --config=yolact_base_config --resume=weights/yolact_base_10_32100.pth --start_iter=-1`
 
--Use the help option to see a description of all available command line arguments
+- Use the help option to see a description of all available command line arguments
 `python train.py --help`
 
 
