@@ -1,11 +1,11 @@
-#This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
-#The segeregated readme files can be found in individual directories. 
+# This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
+# The segeregated readme files can be found in individual directories. 
 
 
 
 
 
-##MASKRCNN
+## MASKRCNN
 
 FOLDER NAME: MaskRcnn
 
