@@ -1,25 +1,13 @@
 #This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
 #The segeregated readme files can be found in individual directories. 
 
--------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx
--------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx
 
 
-Note: Due to limit on max file size(400MB) Input Video Folder has been kept as common in this same directory. 
-Please copy the Input Videos folder to MaskRCNN and Yolo-BG-Sub folder before running the code.
 
 
--------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx
--------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx-------xxxx
-
-
--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 ##MASKRCNN
+
 FOLDER NAME: MaskRcnn
--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
-
-
-
 
 # Installation
 
@@ -46,11 +34,11 @@ FOLDER NAME: MaskRcnn
 
 
 
--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 ##You Only Look At Coefficients (YOLACT)
 A simple, fully convolutional model for real-time instance segmentation.
+
 FOLDER NAME: YOLACT
--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
 
 
 
@@ -118,10 +106,8 @@ If you use YOLACT or this code base in your work, please cite
 
 
 
--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
-# Background Substraction in YOLIO
+
 FOLDER NAME: YOLACT
--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
 
 
 
