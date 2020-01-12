@@ -22,7 +22,7 @@ FOLDER NAME: Mask_Rcnn
 	`actvitate MaskRCNN`
 	`pip install -r requirements.txt`
 
--Download the coco preTrained Weights	
+- Download the coco preTrained Weights	
 	Go here "https://github.com/matterport/Mask_RCNN/releases"
 	download the "mask_rcnn_coco.h5" file
 	place the file in the Mask_RCNN directory
