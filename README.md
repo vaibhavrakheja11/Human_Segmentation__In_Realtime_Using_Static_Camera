@@ -50,7 +50,7 @@ FOLDER NAME: YOLACT
  - Install [Pytorch](http://pytorch.org/) 1.0.1 (or higher) and TorchVision.
  - Install some other packages:
    Shell
-   ### Cython needs to be installed before pycocotools
+ - ### Cython needs to be installed before pycocotools
    `pip install cython`
    `pip install opencv-python pillow pycocotools matplotlib`
    
