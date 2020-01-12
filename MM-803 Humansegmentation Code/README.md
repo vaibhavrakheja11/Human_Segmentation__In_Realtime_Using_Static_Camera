@@ -7,7 +7,7 @@
 
 # MASKRCNN
 
-FOLDER NAME: MaskRcnn
+FOLDER NAME: Mask_Rcnn
 
 ## Installation
 
@@ -104,7 +104,7 @@ If you use YOLACT or this code base in your work, please cite
 
 # cvlib
 A high level easy-to-use open source Computer Vision library for Python.
-
+FOLDER NAME: YOLO-BG-SUB
 ## Installation
 
 ### Installing dependencies (installed already with MaskRCNN)
