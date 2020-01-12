@@ -1,15 +1,15 @@
-# This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
-# The segeregated readme files can be found in individual directories. 
+### This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
+### The segeregated readme files can be found in individual directories. 
 
 
 
 
 
-## MASKRCNN
+# MASKRCNN
 
 FOLDER NAME: MaskRcnn
 
-# Installation
+## Installation
 
 - Create a new env for MaskRCNN.
 	`conda create -n MaskRCNN python=3.6 pip`
@@ -34,7 +34,7 @@ FOLDER NAME: MaskRcnn
 
 
 
-##You Only Look At Coefficients (YOLACT)
+# You Only Look At Coefficients (YOLACT)
 A simple, fully convolutional model for real-time instance segmentation.
 
 FOLDER NAME: YOLACT
@@ -42,12 +42,12 @@ FOLDER NAME: YOLACT
 
 
 
-# Installation
+## Installation
  - Set up a Python3 environment.
  - Install [Pytorch](http://pytorch.org/) 1.0.1 (or higher) and TorchVision.
  - Install some other packages:
    Shell
-   # Cython needs to be installed before pycocotools
+   ### Cython needs to be installed before pycocotools
    pip install cython
    pip install opencv-python pillow pycocotools matplotlib 
    
@@ -67,7 +67,7 @@ FOLDER NAME: YOLACT
 
 
 
-# Training
+## Training
 By default, we train on COCO. Make sure to download the entire dataset using the commands above.
  - To train, grab an imagenet-pretrained model and put it in ./weights.
    - For Resnet101, download resnet101_reducedfc.pth from [here](https://drive.google.com/file/d/1tvqFPd4bJtakOlmn-uIA492g2qurRChj/view?usp=sharing).
@@ -77,22 +77,22 @@ By default, we train on COCO. Make sure to download the entire dataset using the
    - Note that you can press ctrl+c while training and it will save an *_interrupt.pth file at the current iteration.
    - All weights are saved in the ./weights directory by default with the file name <config>_<epoch>_<iter>.pth.
 Shell
-# Trains using the base config with a batch size of 8 (the default).
+-Trains using the base config with a batch size of 8 (the default).
 python train.py --config=yolact_base_config
 
-# Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
+### Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
 python train.py --config=yolact_base_config --batch_size=5
 
-# Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
+### Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
 python train.py --config=yolact_base_config --resume=weights/yolact_base_10_32100.pth --start_iter=-1
 
-# Use the help option to see a description of all available command line arguments
+### Use the help option to see a description of all available command line arguments
 python train.py --help
 
 
 
 
-# Citation
+## Citation
 If you use YOLACT or this code base in your work, please cite
 
 @inproceedings{bolya-iccv2019,
