@@ -10,7 +10,7 @@
 
 # MASKRCNN
 
-FOLDER NAME: Mask_Rcnn
+FOLDER NAME: MASK_RCNN
 
 ## Installation
 
@@ -51,21 +51,21 @@ FOLDER NAME: YOLACT
  - Install some other packages:
    Shell
    ### Cython needs to be installed before pycocotools
-   pip install cython
-   pip install opencv-python pillow pycocotools matplotlib 
+   `pip install cython`
+   `pip install opencv-python pillow pycocotools matplotlib`
    
  - Clone this repository and enter it:
    Shell
-   git clone https://github.com/dbolya/yolact.git
-   cd yolact
+   `git clone https://github.com/dbolya/yolact.git`
+   `cd yolact`
    
  - If you'd like to train YOLACT, download the COCO dataset and the 2014/2017 annotations. Note that this script will take a while and dump 21gb of files into ./data/coco.
    Shell
-   sh data/scripts/COCO.sh
+   `sh data/scripts/COCO.sh`
    
  - If you'd like to evaluate YOLACT on test-dev, download test-dev with this script.
    Shell
-   sh data/scripts/COCO_test.sh
+   `sh data/scripts/COCO_test.sh`
    
 
 
@@ -118,7 +118,7 @@ FOLDER NAME: YOLO-BG-SUB
 If you don't have them already installed, you can install through pip
 
 ### Installing cvlib
-pip install cvlib
+`pip install cvlib`
 
 ### Real time object detection
 YOLOv3 is actually a heavy model to run on CPU. If you are working with real time webcam / video feed and doesn't have GPU, try using tiny yolo which is a smaller version of the original YOLO model. It's significantly fast but less accurate.
