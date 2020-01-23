@@ -1,45 +1,162 @@
-## Deep Sequence learning for wildfire spread prediction
+# Human Segmentation in Realtime using Static Camera
+## Image and Video Processing
 
-## Projet Introduction
+#### This is a combined README for 3 different set approaches used to achieve or experiment segementation in realtime.
+#### The segeregated readme files can be found in individual directories. 
 
-In North America, wildfires occur frequently and have direct impacts on society, economy, and environment. In Canada, wildfire management agencies spend 800 million dollars each year on wildfire management, which is projected to increase due to the human-introduced climate change. Therefore, improving the efficiency of the fire management decision-making process is one of the most important tasks for wildfire management agencies. In particular, wildfire spread prediction is one of the essential yet challenging tasks. 
 
-Current methods in place for wildfire spread prediction is based either on empirical or physical models, which are all limited by the imperfect understanding of the physical processes and data quality. The recent advancement in pixel-wise deep sequence learning models may be a feasible solution for this problem. However, there are no existing deep learningbased works in the context of wildfire spread prediction, In addition, there is no existing standard (e.g., how to build training dataset and framework architecture) for using deep learning methods for wildfire spread prediction. 
 
-As the first step of a complicated question, we propose to implement the pixel-wise deep learning methods that combine the convolutional–recurrent approaches for wildfire spread prediction. We will build the training dataset using the historical wildfire mapped from the satellite images. For evaluation, we will use our own benchmark dataset following the standard object segmentation evaluation methods.
 
-------
 
-## Getting started
+# MASKRCNN
 
-To start trainning with real wildfire data.
+FOLDER NAME: MASK_RCNN
 
-Open Jupyter Notebook from terminal (or any other method you preferred)
+## Installation
 
-```cmd
-$ jupyter notebook
-```
+- Create a new env for MaskRCNN.
+	`conda create -n MaskRCNN python=3.6 pip`
 
-If you get problem as the following: `$ UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 4: ordinal not in range(128)`, then try:
 
-```python
-$ LANG=zn jupyter notebook
-```
+- Install the requirements.txt inside the zip folder pip install -r requirements.txt
+	`actvitate MaskRCNN`
+	`pip install -r requirements.txt`
 
-Then if you want to try model without any additional features, please open file  [tiffworksheet.ipynb](http://localhost:8888/notebooks/tiffworksheet.ipynb) otherwise, the model in [TiffWorksheetAdditionalFeatures-Copy1.ipynb](http://localhost:8888/notebooks/TiffWorksheetAdditionalFeatures-Copy1.ipynb) contain supplementary features.
+- Download the coco preTrained Weights	
+	Go here "https://github.com/matterport/Mask_RCNN/releases"
+	download the "mask_rcnn_coco.h5" file
+	place the file in the Mask_RCNN directory
+	
+	
+- Open jupyter notebook
+	`jupyter notebook`
+	
+- Run ipynb file ( MaskRcnn-Image.ipynb, HumanSegementationVideo.ipynb, RealTimeMaskRcnn.ipynb ) for Image, Video and Real time segmentation).
 
-After open the .ipynb file, run each section in order, you may see some examples and stardard images at the beginning. After running the section start with `# Conv2DLSTM with Gaussian Noise` ( in tiffworksheet.ipynb) or the section start with `#ConvoLstm2d with gaussian noise`( in TiffWorksheetAdditionalFeatures-Copy1.ipynb), the corresponding model start training with real fire data-set which may cost some time.
 
-Also you can cotumize the parameters of model in following section:
 
-```python
-#initialise params
-hyperparams = {"num_epochs": 10, 
-          "batch_size": 2,
-          "height": 128,
-          "width": 128}
 
-config=hyperparams
-```
 
-After trainning, the last block in the file (starting with `#local testing block uttu` ) will give you the test images and evaluation results. There will be two columns of results, ground-truth is on the left and the right side is predictions
+# You Only Look At Coefficients (YOLACT)
+A simple, fully convolutional model for real-time instance segmentation.
+
+FOLDER NAME: YOLACT
+
+
+
+
+## Installation
+ - Set up a Python3 environment.
+ - Install [Pytorch](http://pytorch.org/) 1.0.1 (or higher) and TorchVision.
+ - Install some other packages:
+   Shell
+ - #### Cython needs to be installed before pycocotools
+   `pip install cython`
+   `pip install opencv-python pillow pycocotools matplotlib`
+   
+ - Clone this repository and enter it:
+   Shell
+   `git clone https://github.com/dbolya/yolact.git`
+   `cd yolact`
+   
+ - If you'd like to train YOLACT, download the COCO dataset and the 2014/2017 annotations. Note that this script will take a while and dump 21gb of files into ./data/coco.
+   Shell
+   `sh data/scripts/COCO.sh`
+   
+ - If you'd like to evaluate YOLACT on test-dev, download test-dev with this script.
+   Shell
+   `sh data/scripts/COCO_test.sh`
+   
+
+
+
+## Training
+By default, we train on COCO. Make sure to download the entire dataset using the commands above.
+ - To train, grab an imagenet-pretrained model and put it in ./weights.
+   - For Resnet101, download resnet101_reducedfc.pth from [here](https://drive.google.com/file/d/1tvqFPd4bJtakOlmn-uIA492g2qurRChj/view?usp=sharing).
+   - For Resnet50, download resnet50-19c8e357.pth from [here](https://drive.google.com/file/d/1Jy3yCdbatgXa5YYIdTCRrSV0S9V5g1rn/view?usp=sharing).
+   - For Darknet53, download darknet53.pth from [here](https://drive.google.com/file/d/17Y431j4sagFpSReuPNoFcj9h7azDTZFf/view?usp=sharing).
+ - Run one of the training commands below.
+   - Note that you can press ctrl+c while training and it will save an *_interrupt.pth file at the current iteration.
+   - All weights are saved in the ./weights directory by default with the file name <config>_<epoch>_<iter>.pth.
+Shell
+- Trains using the base config with a batch size of 8 (the default).
+`python train.py --config=yolact_base_config`
+
+- Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
+`python train.py --config=yolact_base_config --batch_size=5`
+
+- Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
+`python train.py --config=yolact_base_config --resume=weights/yolact_base_10_32100.pth --start_iter=-1`
+
+- Use the help option to see a description of all available command line arguments
+`python train.py --help`
+
+
+
+
+## Citation
+If you use YOLACT or this code base in your work, please cite
+
+@inproceedings{bolya-iccv2019,
+  author    = {Daniel Bolya and Chong Zhou and Fanyi Xiao and Yong Jae Lee},
+  title     = {YOLACT: {Real-time} Instance Segmentation},
+  booktitle = {ICCV},
+  year      = {2019},
+}
+
+# CVLIB
+A high level easy-to-use open source Computer Vision library for Python.
+FOLDER NAME: YOLO-BG-SUB
+## Installation
+
+### Installing dependencies (installed already with MaskRCNN)
+
+* OpenCV
+* TensorFlow
+
+If you don't have them already installed, you can install through pip
+
+### Installing cvlib
+`pip install cvlib`
+
+### Real time object detection
+YOLOv3 is actually a heavy model to run on CPU. If you are working with real time webcam / video feed and doesn't have GPU, try using tiny yolo which is a smaller version of the original YOLO model. It's significantly fast but less accurate.
+`bbox, label, conf = cv.detect_common_objects(img, confidence=0.25, model='yolov3-tiny')`
+
+## Utils
+### Video to frames
+get_frames() method can be helpful when you want to grab all the frames from a video. Just pass the path to the video, it will return all the frames in a list. Each frame in the list is a numpy array.
+
+`import cvlib as cv
+frames = cv.get_frames('~/Downloads/demo.mp4')
+
+Optionally you can pass in a directory path to save all the frames to disk.
+
+frames = cv.get_frames('~/Downloads/demo.mp4', '~/Downloads/demo_frames/')`
+
+
+### Creating gif
+animate( ) method lets you create gif from a list of images. Just pass a list of images or path to a directory containing images and output gif name as arguments to the method, it will create a gif out of the images and save it to disk for you.
+
+
+`cv.animate(frames, '~/Documents/frames.gif')`
+
+
+### Background Subtraction
+`mask.py` and `maskMOG.py` provides two methods of background subtraction. `mask.py` simply uses frame differencing, while `maskMOG.py` uses MOG. Feel free to modify these two methods in object_detect.py.
+
+`from maskMOG import draw_mask`
+
+or
+
+`from mask import draw_mask`
+
+To run the mask generation, use following command
+
+`python yolo_bg.py --image_path`
+
+Before running mask generation, make sure set the background image in `yolo_bg.py`
+
+
+`image_bg=cv2.imread('imgpath')`
